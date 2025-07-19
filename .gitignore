@@ -1,0 +1,6 @@
+/public/*
+*copy.*
+*.bak
+*.BAK
+/.hugo_build.lock
+*.sh

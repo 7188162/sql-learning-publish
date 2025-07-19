@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="基本構文から中級テクニックまで、すぐに使えるSQLのチートシート">
+<meta name="keywords" content="">
+<meta name="author" content="">
+
+
+<title>A-5. SQLクイックリファレンス・チートシート | SQL Master Hub</title>
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<meta property="og:title" content="A-5. SQLクイックリファレンス・チートシート | SQL Master Hub">
+<meta property="og:description" content="基本構文から中級テクニックまで、すぐに使えるSQLのチートシート">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.org/appendix/a-5-quickreference/">
+<meta property="og:image" content="https://example.org/images/og-image.png">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A-5. SQLクイックリファレンス・チートシート | SQL Master Hub">
+<meta name="twitter:description" content="基本構文から中級テクニックまで、すぐに使えるSQLのチートシート">
+<meta name="twitter:image" content="https://example.org/images/og-image.png">
+
+
+
+<link rel="canonical" href="https://example.org/appendix/a-5-quickreference/">
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "SQL Master Hub",
+    "url": "https:\/\/example.org\/appendix\/a-5-quickreference\/",
+    "description": "基本構文から中級テクニックまで、すぐに使えるSQLのチートシート",
+    "headline": "A-5. SQLクイックリファレンス・チートシート",
+    "datePublished": "0001-01-01T00:00:00Z",
+    "dateModified": "0001-01-01T00:00:00Z",
+    "author": {
+        "@type": "Organization",
+        "name": ""
+    }}
+</script></head>
+<body>
+<header class="header">
+    <div class="nav-container"><div class="logo">
+            <a href="/">
+                SQL Master Hub
+            </a>
+        </div><button class="mobile-menu-btn" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul class="nav-links"><li><a href="/" >ホーム</a></li><li><a href="/tags/chapter/" >章一覧</a></li><li><a href="/tags/exercise/" >演習問題</a></li><li><a href="/appendix/" >リファレンス</a></li><li><a href="/about/" >このサイトについて</a></li></ul>
+        </nav>
+    </div>
+</header>
+    <div class="main-content">
+        <aside class="sidebar fade-in">
+<h3>📚 章一覧</h3><ul class="chapter-list"><li class="chapter-item">
+        <a href="https://example.org/chapter0/" class="chapter-link ">第0章 はじめに：データベースの世界へようこそ</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter1/" class="chapter-link ">第1章 データベースとテーブルの基本操作 (DDL)</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter2/" class="chapter-link ">第2章 データを操る基本の「キ」 (DML: CRUD操作)</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter3/" class="chapter-link ">第3章 データ分析の第一歩：集計と結合</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter4/" class="chapter-link ">第4章 SQLをさらに便利にする関数群</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter5/" class="chapter-link ">第5章 中級者へのステップアップ</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter6/" class="chapter-link ">第6章 (発展) データベース設計の初歩</a></li><li class="chapter-item">
+        <a href="https://example.org/appendix/" class="chapter-link active">
+            📎 付録
+        </a>
+    </li></ul>
+
+<div class="sidebar-section">
+    <h3>🔗 クイックリンク</h3>
+    <ul class="quick-links"><li><a href="/appendix/a-5-quickreference/" >SQLリファレンス</a></li><li><a href="/tags/exercise/" >演習問題集</a></li><li><a href="/chapter0/#0-5-%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E7%B4%B9%E4%BB%8B%E3%81%A8%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97" >サンプルデータベース</a></li><li><a href="https://www.sqlite.org/index.html" target="_blank" rel="noopener">SQLite公式ドキュメント</a></li><li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener">MySQL公式ドキュメント</a></li><li><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener">PostgreSQL公式ドキュメント</a></li></ul>
+</div>
+<div class="sidebar-section">
+    <h3>💾 対応RDBMS</h3>
+    <div class="rdbms-support"><div class="badge mysql">MySQL</div><div class="badge postgresql">PostgreSQL</div><div class="badge sqlite">SQLite</div><div class="badge access">MS Access</div><div class="badge db2">IBM Db2</div></div>
+</div></aside>
+        <main class="content fade-in "><article class="article">
+    
+    <header class="article-header">
+        <h1>A-5. SQLクイックリファレンス・チートシート</h1>
+        
+        
+        <div class="article-meta"><p class="article-description">基本構文から中級テクニックまで、すぐに使えるSQLのチートシート</p></div>
+    </header>
+
+    
+    <div class="article-content">
+        <h1 id="sqlクイックリファレンスチートシート">SQLクイックリファレンス・チートシート</h1>
+<p>学習中に迷ったとき、実務での確認用に使えるSQL構文の一覧です。対応しているRDBMSはバッジで示しています。</p>
+<hr>
+<h2 id="-データ定義ddl">🏗 データ定義（DDL）</h2>
+<h3 id="データベースの作成削除">データベースの作成・削除</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">sample</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">sample</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>: SQLiteおよびMS Accessはファイルベースのデータベースであるため、これらの構文はSQLとしては利用しません。SQLiteはデータベースファイルを作成・削除し、MS AccessはGUI操作やVBAを通じてデータベースファイルを作成・削除します。</li>
+</ul>
+<hr>
+<h3 id="テーブルの作成削除">テーブルの作成・削除</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">age</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="テーブル定義の変更">テーブル定義の変更</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>: SQLite は列の追加のみ対応しており、列の削除や型変更には制限があります。</li>
+</ul>
+<hr>
+<h2 id="-データ操作dml">✏️ データ操作（DML）</h2>
+<h3 id="データの追加">データの追加</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="データの更新">データの更新</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="データの削除">データの削除</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h2 id="-データの取得select">🔍 データの取得（SELECT）</h2>
+<h3 id="条件指定と並び替え">条件指定と並び替え</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="件数制限">件数制限</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>: <code>LIMIT</code>と<code>OFFSET</code>は標準SQLではありませんが、多くのRDBMSで独自拡張として採用されています。
+<ul>
+<li><strong>標準SQL / IBM Db2</strong>: <code>OFFSET 5 ROWS FETCH NEXT 10 ROWS ONLY</code>のような構文が標準的です。</li>
+<li><strong>MS Access</strong>: <code>SELECT TOP 10 * FROM users;</code>のように<code>TOP</code>句を使用します。<code>OFFSET</code>に直接対応する構文はありません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-集計結合">📊 集計・結合</h2>
+<h3 id="グループ化集計">グループ化・集計</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="テーブルの結合">テーブルの結合</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">user_id</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h2 id="-関数">🔣 関数</h2>
+<h3 id="文字列関数">文字列関数</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">UPPER</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="k">LENGTH</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><code>UPPER</code>は多くのRDBMSで共通です。</li>
+<li><code>LENGTH</code>は文字数またはバイト数を返すなど、RDBMSによって挙動が異なる場合があります（標準SQLでは<code>CHARACTER_LENGTH</code>または<code>CHAR_LENGTH</code>が文字数を返します）。</li>
+<li><strong>MS Access</strong>: <code>UCASE(name)</code>と<code>LEN(name)</code>を使用します。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="数値関数">数値関数</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">ABS</span><span class="p">(</span><span class="n">profit</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="日付関数">日付関数</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="nb">DATE</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">STRFTIME</span><span class="p">(</span><span class="s1">&#39;%Y-%m&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;now&#39;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="p">,</span><span class="w"> </span><span class="k">CURRENT_TIME</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MS Access</strong>: <code>Date()</code>, <code>Time()</code> (関数名の後ろに括弧が必要) や <code>Now()</code> などの関数を使用します。<code>CURRENT_DATE</code>や<code>CURRENT_TIME</code>はサポートしません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-中級構文">🧠 中級構文</h2>
+<h3 id="サブクエリ">サブクエリ</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="共通テーブル式cte">共通テーブル式（CTE）</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">WITH</span><span class="w"> </span><span class="n">recent_orders</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">order_date</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;2024-01-01&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">recent_orders</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MySQL</strong>: MySQL 8.0以降で対応しています。</li>
+<li><strong>MS Access</strong>: サポートしません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="ウィンドウ関数">ウィンドウ関数</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MySQL</strong>: MySQL 8.0以降で対応しています。</li>
+<li><strong>MS Access</strong>: サポートしません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-その他便利構文">⚙ その他便利構文</h2>
+<h3 id="条件分岐case">条件分岐（CASE）</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;成人&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;未成年&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">category</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MS Access</strong>: <code>IIF</code>関数や <code>Switch</code> 関数を使用します。<code>CASE</code> はサポートしません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="型変換cast">型変換（CAST）</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MS Access</strong>: <code>CSTR(age)</code>や<code>CINT()</code>などの変換関数を使用します。<code>CAST</code>はサポートしません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="集合演算">集合演算</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">contractors</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<hr>
+<h3 id="ビュー作成">ビュー作成</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">adult_users</span><span class="w"> </span><span class="k">AS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MS Access</strong>: クエリとして保存する機能はありますが、<code>CREATE VIEW</code>というSQL構文はサポートしません。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="トランザクション制御">トランザクション制御</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">BEGIN</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li><strong>MySQL</strong>: <code>START TRANSACTION;</code>も利用可能です。</li>
+<li><strong>MS Access</strong>: SQL文としての<code>BEGIN</code>や<code>COMMIT</code>はサポートしません。VBAのADO/DAOオブジェクトモデルを介してトランザクションを制御します。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-ピボットアンピボット">📎 ピボット／アンピボット</h2>
+<h3 id="縦持ち--横持ちピボット">縦持ち → 横持ち（ピボット）</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">user_id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">MAX</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">A_score</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">MAX</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">B_score</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">scores</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">user_id</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li>この<code>CASE</code>文を用いた方法は多くのRDBMSで機能する汎用的な手法です。</li>
+<li><strong>IBM Db2</strong>: <code>PIVOT</code>句もサポートしますが、この構文も利用可能です。</li>
+<li><strong>MS Access</strong>: <code>CASE</code>文の代わりに<code>IIF</code>関数を使うことで同様のロジックを実装できます。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="横持ち--縦持ちアンピボット">横持ち → 縦持ち（アンピボット）</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">A_score</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">results</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">B_score</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">results</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><div class="badges-container"><div class="badge badge-標準sql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>標準SQL</span>
+        </div><div class="badge badge-mysql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MySQL</span>
+        </div><div class="badge badge-postgresql">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>PostgreSQL</span>
+        </div><div class="badge badge-sqlite">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>SQLite</span>
+        </div><div class="badge badge-ibm db2">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>IBM Db2</span>
+        </div><div class="badge badge-ms access">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+            <span>MS Access</span>
+        </div></div>
+<ul>
+<li><strong>補足</strong>:
+<ul>
+<li>この<code>UNION ALL</code>を用いた方法は多くのRDBMSで機能する汎用的な手法です。</li>
+<li><strong>IBM Db2</strong>: <code>UNPIVOT</code>句もサポートしますが、この構文も利用可能です。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-補足">📝 補足</h2>
+<ul>
+<li>このチートシートはSQLの主要構文をカバーしています。</li>
+<li>各RDBMSのバージョンにより一部構文の使用可否が異なる場合があります。</li>
+<li>詳細は各章の解説を参照してください。</li>
+</ul>
+<hr>
+<p>🎉 お疲れ様でした！
+本チートシートは常に最新化していく予定です。ご意見・改善提案も歓迎です！</p>
+
+    </div>
+
+    
+    <footer class="article-footer">
+        
+        <nav class="article-nav"><a href="https://example.org/appendix/a-4-glossary/" class="nav-link prev-link">
+                <div class="nav-direction">                                        
+                    <div>← 前のセクション</div>
+                </div>
+                <div class="nav-title">A-4. SQL用語集</div>
+            </a></nav>
+
+        </footer>
+</article>
+        </main>
+    </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid with-dividers">
+            
+            <div class="footer-section">
+                <h4>SQL Master Hub</h4>
+                <p>SQL初中級者を対象とした実践的な学習リソースです。基本的な構文から実用的なテクニックまで、体系的にSQLをマスターできます。</p></div>
+
+            
+            <div class="footer-section">
+                <h4>ナビゲーション</h4>
+                <ul class="footer-links"><li><a href="/">ホーム</a></li><li><a href="/tags/chapter/">章一覧</a></li><li><a href="/tags/exercise/">演習</a></li><li><a href="/appendix/">リファレンス</a></li></ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>クイックリンク</h4>
+                <ul class="footer-links"><li><a href="/appendix/a-5-quickreference/">SQLリファレンス</a></li><li><a href="/tags/exercise/">演習問題集</a></li><li><a href="/appendix/a-4-glossary/">用語集</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>ライセンス</h4>
+                <p>このサイトのコンテンツは教育目的で提供されています。</p></div>
+
+            </div>
+
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copyright">
+                    &copy; 2025 SQL Master Hub. 
+                    All rights reserved.
+                </p><p class="hugo-credit">
+                    Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+                </p></div>
+        </div>
+    </div>
+</footer>
+
+<style>
+ 
+.footer {
+    background: var(--neutral-800);
+    color: var(--neutral-200);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-grid.with-dividers .footer-section:not(:last-child) {
+    border-right: 1px solid var(--neutral-700);
+    padding-right: 2rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-section h5 {
+    color: var(--neutral-300);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--neutral-300);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue-light);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--neutral-700);
+    border-radius: 50%;
+    color: var(--neutral-300);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.contact-link {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.newsletter-form {
+    margin-top: 1rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--neutral-600);
+    border-radius: 6px;
+    background: var(--neutral-700);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.newsletter-input::placeholder {
+    color: var(--neutral-400);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.newsletter-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.newsletter-button:hover {
+    background: var(--primary-blue-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--neutral-700);
+    padding-top: 1.5rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+
+.hugo-credit {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+
+.hugo-credit a {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+}
+
+.hugo-credit a:hover {
+    text-decoration: underline;
+}
+
+ 
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .footer-grid.with-dividers .footer-section {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--neutral-700);
+        padding-bottom: 1.5rem;
+    }
+    
+    .footer-grid.with-dividers .footer-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#2563eb',
+                primaryTextColor: '#374151',
+                primaryBorderColor: '#e5e7eb',
+                lineColor: '#6b7280'
+            }
+        });
+    </script>
+
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

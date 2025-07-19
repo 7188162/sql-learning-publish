@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+
+
+<title>A-3. 演習問題の解答・解説 | SQL Master Hub</title>
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<meta property="og:title" content="A-3. 演習問題の解答・解説 | SQL Master Hub">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.org/appendix/a-3-answers/">
+<meta property="og:image" content="https://example.org/images/og-image.png">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A-3. 演習問題の解答・解説 | SQL Master Hub">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://example.org/images/og-image.png">
+
+
+
+<link rel="canonical" href="https://example.org/appendix/a-3-answers/">
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "SQL Master Hub",
+    "url": "https:\/\/example.org\/appendix\/a-3-answers\/",
+    "description": "",
+    "headline": "A-3. 演習問題の解答・解説",
+    "datePublished": "0001-01-01T00:00:00Z",
+    "dateModified": "0001-01-01T00:00:00Z",
+    "author": {
+        "@type": "Organization",
+        "name": ""
+    }}
+</script></head>
+<body>
+<header class="header">
+    <div class="nav-container"><div class="logo">
+            <a href="/">
+                SQL Master Hub
+            </a>
+        </div><button class="mobile-menu-btn" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul class="nav-links"><li><a href="/" >ホーム</a></li><li><a href="/tags/chapter/" >章一覧</a></li><li><a href="/tags/exercise/" >演習問題</a></li><li><a href="/appendix/" >リファレンス</a></li><li><a href="/about/" >このサイトについて</a></li></ul>
+        </nav>
+    </div>
+</header>
+    <div class="main-content">
+        <aside class="sidebar fade-in">
+<h3>📚 章一覧</h3><ul class="chapter-list"><li class="chapter-item">
+        <a href="https://example.org/chapter0/" class="chapter-link ">第0章 はじめに：データベースの世界へようこそ</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter1/" class="chapter-link ">第1章 データベースとテーブルの基本操作 (DDL)</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter2/" class="chapter-link ">第2章 データを操る基本の「キ」 (DML: CRUD操作)</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter3/" class="chapter-link ">第3章 データ分析の第一歩：集計と結合</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter4/" class="chapter-link ">第4章 SQLをさらに便利にする関数群</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter5/" class="chapter-link ">第5章 中級者へのステップアップ</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter6/" class="chapter-link ">第6章 (発展) データベース設計の初歩</a></li><li class="chapter-item">
+        <a href="https://example.org/appendix/" class="chapter-link active">
+            📎 付録
+        </a>
+    </li></ul>
+
+<div class="sidebar-section">
+    <h3>🔗 クイックリンク</h3>
+    <ul class="quick-links"><li><a href="/appendix/a-5-quickreference/" >SQLリファレンス</a></li><li><a href="/tags/exercise/" >演習問題集</a></li><li><a href="/chapter0/#0-5-%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E7%B4%B9%E4%BB%8B%E3%81%A8%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97" >サンプルデータベース</a></li><li><a href="https://www.sqlite.org/index.html" target="_blank" rel="noopener">SQLite公式ドキュメント</a></li><li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener">MySQL公式ドキュメント</a></li><li><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener">PostgreSQL公式ドキュメント</a></li></ul>
+</div>
+<div class="sidebar-section">
+    <h3>💾 対応RDBMS</h3>
+    <div class="rdbms-support"><div class="badge mysql">MySQL</div><div class="badge postgresql">PostgreSQL</div><div class="badge sqlite">SQLite</div><div class="badge access">MS Access</div><div class="badge db2">IBM Db2</div></div>
+</div></aside>
+        <main class="content fade-in "><article class="article">
+    
+    <header class="article-header">
+        <h1>A-3. 演習問題の解答・解説</h1>
+        
+        
+        <div class="article-meta"></div>
+    </header>
+
+    
+    <div class="article-content">
+        <p>このページでは、各章の末尾にある演習問題の解答例と、簡単な解説を記載します。</p>
+<hr>
+<h2 id="第1章の解答">第1章の解答</h2>
+<p><small><a href="/chapter1/1-5-excercise">第1章の演習問題に戻る »</a></small></p>
+<h3 id="問題1">問題1</h3>
+<p>以下の仕様で、書籍情報を管理するための <code>books</code> テーブルを作成するSQL文を書いてみましょう。</p>
+<p><strong>解答例 (SQLite版)</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">books</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">book_id</span><span class="w">         </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">title</span><span class="w">           </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">author</span><span class="w">          </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">published_date</span><span class="w">  </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">price</span><span class="w">           </span><span class="nb">INTEGER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div>
+<strong>解説:</strong>
+<code>INTEGER PRIMARY KEY AUTOINCREMENT</code> は、SQLiteで自動採番の主キーを作成する際の一般的な記述です。<code>NOT NULL</code>制約で<code>title</code>は必須項目としています。</p>
+<hr>
+<h2 id="第2章の解答">第2章の解答</h2>
+<p><small><a href="/chapter2/2-6-excercise">第2章の演習問題に戻る »</a></small></p>
+<h3 id="問題1-1">問題1</h3>
+<p><code>products</code>テーブルから、カテゴリが「周辺機器」で、価格が10,000円以上の商品を検索するSQL文を書いてください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;周辺機器&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span></span></span></code></pre></div>
+<strong>解説:</strong>
+<code>WHERE</code>句に<code>AND</code>を使って2つの条件を結合しています。</p>
+<h3 id="問題2-3-4">問題2, 3, 4</h3>
+<p>顧客データの追加、更新、削除。</p>
+<p><strong>解答例 (一連の流れ)</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 2. 新しい顧客データを追加
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="p">(</span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="n">customer_name</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;自分の名前&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;九州&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 3. 上記で追加したデータのregionを&#39;北海道&#39;に更新
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">customers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SET</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;北海道&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 4. 上記で更新したデータを削除
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">customers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span></span></span></code></pre></div>
+<strong>解説:</strong>
+<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>の基本的な構文です。特に<code>UPDATE</code>と<code>DELETE</code>では、操作対象を特定するための<code>WHERE</code>句が非常に重要です。</p>
+<hr>
+<h2 id="第3章の解答">第3章の解答</h2>
+<p><small><a href="/chapter3/3-5-excercise">第3章の演習問題に戻る »</a></small></p>
+<h3 id="問題1-2">問題1</h3>
+<p>顧客ごと(<code>customer_id</code>)の注文件数を求めてください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">customer_id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="n">sale_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">order_count</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">customer_id</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題2">問題2</h3>
+<p>カテゴリごとの商品の最高価格と最低価格を求めてください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">category</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">MAX</span><span class="p">(</span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_price</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">MIN</span><span class="p">(</span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">min_price</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">products</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">category</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題3-4">問題3, 4</h3>
+<p>商品ごとの販売数量合計を求め、合計が5個以上の商品だけを表示してください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">product_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_quantity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">products</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">product_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">product_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">product_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">HAVING</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span></span></span></code></pre></div>
+<strong>解説:</strong>
+<code>GROUP BY</code>で集計した後の結果に対して条件を適用するため、<code>WHERE</code>ではなく<code>HAVING</code>句を使用します。</p>
+<h3 id="問題5">問題5</h3>
+<p>全ての部署名と、そこに所属する従業員名を表示してください。従業員が一人もいない部署も表示されるようにしてください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">d</span><span class="p">.</span><span class="n">department_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">employee_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">departments</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employees</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">department_id</span><span class="p">;</span></span></span></code></pre></div>
+<strong>解説:</strong>
+部署テーブル(<code>departments</code>)を主軸にし、従業員がいない部署も結果に残すため、<code>LEFT JOIN</code>を使用します。</p>
+<hr>
+<h2 id="第4章の解答">第4章の解答</h2>
+<p><small><a href="/chapter4/4-5-excercise">第4章の演習問題に戻る »</a></small></p>
+<h3 id="問題1-3">問題1</h3>
+<p>従業員名の後ろに<code>(ID: [employee_id])</code>という文字列を連結して表示してください。</p>
+<p><strong>解答例 (SQLite版)</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employee_name</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;(ID: &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">employee_id</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">employee_with_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employees</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題2-1">問題2</h3>
+<p><code>sale_date</code>から「年」だけを抽出してください。</p>
+<p><strong>解答例 (SQLite版)</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sale_date</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">STRFTIME</span><span class="p">(</span><span class="s1">&#39;%Y&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sale_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales_year</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sales</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題3">問題3</h3>
+<p>給与を12倍して年収として表示してください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employee_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">salary</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">annual_salary</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employees</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題4">問題4</h3>
+<p><code>CASE</code>式を使い、<code>category</code>を日本語に変換してください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">product_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">category</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">CASE</span><span class="w"> </span><span class="n">category</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;PC&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;パーソナルコンピュータ&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;周辺機器&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;アクセサリ&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;その他&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">category_jp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">products</span><span class="p">;</span></span></span></code></pre></div></p>
+<hr>
+<h2 id="第5章の解答">第5章の解答</h2>
+<p><small><a href="/chapter5/5-8-excercise">第5章の演習問題に戻る »</a></small></p>
+<h3 id="問題1-4">問題1</h3>
+<p>CTEを使い、部署平均給与と従業員の給与を比較してください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">WITH</span><span class="w"> </span><span class="n">dept_avg_salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">department_id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHERE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">department_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">department_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">employee_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">d</span><span class="p">.</span><span class="n">avg_salary</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">avg_salary</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;平均より高い&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;平均以下&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">comparison</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employees</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">dept_avg_salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">department_id</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題2-2">問題2</h3>
+<p>ウィンドウ関数を使い、全従業員を給与が高い順にランク付けしてください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employee_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">salary</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_rank</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employees</span><span class="p">;</span></span></span></code></pre></div>
+<strong>解説:</strong>
+<code>RANK()</code>は同順位を考慮します。<code>ROW_NUMBER()</code>を使うと同順位でも連番になります。</p>
+<h3 id="問題3-1">問題3</h3>
+<p>横持ち→縦持ち変換後、年ごとの四半期別合計売上を計算してください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">WITH</span><span class="w"> </span><span class="n">vertical_sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">product_id</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Q1&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarter</span><span class="p">,</span><span class="w"> </span><span class="n">q1_sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">quarterly_sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">product_id</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Q2&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarter</span><span class="p">,</span><span class="w"> </span><span class="n">q2_sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">quarterly_sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">product_id</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Q3&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarter</span><span class="p">,</span><span class="w"> </span><span class="n">q3_sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">quarterly_sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">product_id</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Q4&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarter</span><span class="p">,</span><span class="w"> </span><span class="n">q4_sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">quarterly_sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">year</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">quarter</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_quarter_sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">vertical_sales</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">quarter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">quarter</span><span class="p">;</span></span></span></code></pre></div></p>
+<h3 id="問題4-1">問題4</h3>
+<p>従業員ごと・顧客ごとの売上合計金額マトリクスを作成してください。</p>
+<p><strong>解答例</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">employee_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;株式会社ABC&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">quantity</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;株式会社ABC&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;株式会社DEF&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">quantity</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;株式会社DEF&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;GHI商事&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">quantity</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;GHI商事&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;株式会社JKL&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">quantity</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;株式会社JKL&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">employees</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">employee_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">customers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">products</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">product_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">product_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">employee_name</span><span class="p">;</span></span></span></code></pre></div>
+<strong>解説:</strong>
+<code>CASE</code>式を使って、条件に合致する場合のみ売上金額を、合致しない場合は<code>0</code>を返すようにし、それを<code>SUM</code>で集計するのがピボットクエリの基本です。</p>
+
+    </div>
+
+    
+    <footer class="article-footer">
+        <div class="article-tags">
+            <h4>🏷️ タグ</h4>
+            <div class="tags-list"><a href="/tags/exercise" class="tag">exercise</a><a href="/tags/answer" class="tag">answer</a><a href="/tags/solution" class="tag">solution</a></div>
+        </div>
+        <nav class="article-nav"><a href="https://example.org/appendix/a-2-style-guide/" class="nav-link prev-link">
+                <div class="nav-direction">                                        
+                    <div>← 前のセクション</div>
+                </div>
+                <div class="nav-title">A-2. SQLコーディングスタイルガイド</div>
+            </a><a href="https://example.org/appendix/a-4-glossary/" class="nav-link next-link">
+                <div class="nav-direction">                                        
+                    <div>次のセクション →</div>
+                </div>
+                <div class="nav-title">A-4. SQL用語集</div>
+            </a></nav>
+
+        </footer>
+</article>
+        </main>
+    </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid with-dividers">
+            
+            <div class="footer-section">
+                <h4>SQL Master Hub</h4>
+                <p>SQL初中級者を対象とした実践的な学習リソースです。基本的な構文から実用的なテクニックまで、体系的にSQLをマスターできます。</p></div>
+
+            
+            <div class="footer-section">
+                <h4>ナビゲーション</h4>
+                <ul class="footer-links"><li><a href="/">ホーム</a></li><li><a href="/tags/chapter/">章一覧</a></li><li><a href="/tags/exercise/">演習</a></li><li><a href="/appendix/">リファレンス</a></li></ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>クイックリンク</h4>
+                <ul class="footer-links"><li><a href="/appendix/a-5-quickreference/">SQLリファレンス</a></li><li><a href="/tags/exercise/">演習問題集</a></li><li><a href="/appendix/a-4-glossary/">用語集</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>ライセンス</h4>
+                <p>このサイトのコンテンツは教育目的で提供されています。</p></div>
+
+            </div>
+
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copyright">
+                    &copy; 2025 SQL Master Hub. 
+                    All rights reserved.
+                </p><p class="hugo-credit">
+                    Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+                </p></div>
+        </div>
+    </div>
+</footer>
+
+<style>
+ 
+.footer {
+    background: var(--neutral-800);
+    color: var(--neutral-200);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-grid.with-dividers .footer-section:not(:last-child) {
+    border-right: 1px solid var(--neutral-700);
+    padding-right: 2rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-section h5 {
+    color: var(--neutral-300);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--neutral-300);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue-light);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--neutral-700);
+    border-radius: 50%;
+    color: var(--neutral-300);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.contact-link {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.newsletter-form {
+    margin-top: 1rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--neutral-600);
+    border-radius: 6px;
+    background: var(--neutral-700);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.newsletter-input::placeholder {
+    color: var(--neutral-400);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.newsletter-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.newsletter-button:hover {
+    background: var(--primary-blue-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--neutral-700);
+    padding-top: 1.5rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+
+.hugo-credit {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+
+.hugo-credit a {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+}
+
+.hugo-credit a:hover {
+    text-decoration: underline;
+}
+
+ 
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .footer-grid.with-dividers .footer-section {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--neutral-700);
+        padding-bottom: 1.5rem;
+    }
+    
+    .footer-grid.with-dividers .footer-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#2563eb',
+                primaryTextColor: '#374151',
+                primaryBorderColor: '#e5e7eb',
+                lineColor: '#6b7280'
+            }
+        });
+    </script>
+
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

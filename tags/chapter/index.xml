@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chapter on SQL Master Hub</title>
+    <link>https://example.org/tags/chapter/</link>
+    <description>Recent content in Chapter on SQL Master Hub</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <atom:link href="https://example.org/tags/chapter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第0章 はじめに：データベースの世界へようこそ</title>
+      <link>https://example.org/chapter0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter0/</guid>
+      <description>&lt;h2 id=&#34;0-1-この資料の目的と対象読者&#34;&gt;0-1. この資料の目的と対象読者&lt;/h2&gt;&#xA;&lt;p&gt;この学習サイトへようこそ！&#xA;本サイトは、 &lt;strong&gt;SQLを初めて学ぶ方&lt;/strong&gt;から、 &lt;strong&gt;知識を再確認・体系化したい初中級者の方&lt;/strong&gt;までを対象としています。&lt;/p&gt;&#xA;&lt;p&gt;私たちのゴールは、あなたが単にSQLの構文を覚えるだけでなく、 &lt;strong&gt;「なぜそう書くのか」「実務ではどのように使われるのか」&lt;/strong&gt; を理解し、自信を持ってデータベースを操作できるようになることです。&lt;/p&gt;&#xA;&lt;p&gt;各章では、以下のRDBMS（リレーショナルデータベース管理システム）間の違いも解説し、より実践的な知識の習得を目指します。&lt;/p&gt;&#xA;&lt;div class=&#34;badges-container&#34;&gt;&lt;div class=&#34;badge badge-std&#34;&gt;&#xA;            &lt;svg fill=&#34;none&#34; stroke=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;            &lt;span&gt;標準SQL&lt;/span&gt;&#xA;        &lt;/div&gt;&lt;div class=&#34;badge badge-mysql&#34;&gt;&#xA;            &lt;svg fill=&#34;none&#34; stroke=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;            &lt;span&gt;MySQL&lt;/span&gt;&#xA;        &lt;/div&gt;&lt;div class=&#34;badge badge-postgresql&#34;&gt;&#xA;            &lt;svg fill=&#34;none&#34; stroke=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;            &lt;span&gt;PostgreSQL&lt;/span&gt;&#xA;        &lt;/div&gt;&lt;div class=&#34;badge badge-sqlite&#34;&gt;&#xA;            &lt;svg fill=&#34;none&#34; stroke=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;            &lt;span&gt;SQLite&lt;/span&gt;&#xA;        &lt;/div&gt;&lt;div class=&#34;badge badge-db2&#34;&gt;&#xA;            &lt;svg fill=&#34;none&#34; stroke=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;            &lt;span&gt;IBM Db2&lt;/span&gt;&#xA;        &lt;/div&gt;&lt;div class=&#34;badge badge-access&#34;&gt;&#xA;            &lt;svg fill=&#34;none&#34; stroke=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;            &lt;span&gt;MS Access&lt;/span&gt;&#xA;        &lt;/div&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;0-2-データベースdbとrdbmsとは&#34;&gt;0-2. データベース(DB)とRDBMSとは？&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;データベース（DB）&lt;/strong&gt; とは、整理されたデータの集まりのことです。身近な例では、スマートフォンの連絡先リストも一種のデータベースと言えます。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第1章 データベースとテーブルの基本操作 (DDL)</title>
+      <link>https://example.org/chapter1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter1/</guid>
+      <description>&lt;p&gt;この章では、SQLを使ってデータベースやテーブルといったデータの「器」そのものを作成、変更、削除する方法を学びます。これらの操作は&lt;strong&gt;DDL (Data Definition Language)&lt;/strong&gt; と呼ばれます。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第2章 データを操る基本の「キ」 (DML: CRUD操作)</title>
+      <link>https://example.org/chapter2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter2/</guid>
+      <description>&lt;p&gt;第1章ではデータを格納する「器」を作りました。この章では、いよいよその器の中にある「データ」そのものを操作する方法、 &lt;strong&gt;DML (Data Manipulation Language)&lt;/strong&gt; を学びます。&lt;/p&gt;&#xA;&lt;p&gt;DMLは、すべてのアプリケーションの基本機能である&lt;strong&gt;CRUD&lt;/strong&gt; （クラッド）と対応しています。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;C&lt;/strong&gt;reate (生成)  -&amp;gt;  &lt;code&gt;INSERT&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;R&lt;/strong&gt;ead   (読み取り) -&amp;gt; &lt;code&gt;SELECT&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;U&lt;/strong&gt;pdate (更新)  -&amp;gt;  &lt;code&gt;UPDATE&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;elete (削除)  -&amp;gt;  &lt;code&gt;DELETE&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;この章を終える頃には、あなたは基本的なデータの読み書きができるようになっているでしょう。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第3章 データ分析の第一歩：集計と結合</title>
+      <link>https://example.org/chapter3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter3/</guid>
+      <description>&lt;p&gt;&lt;code&gt;SELECT&lt;/code&gt;文の基本を学んだところで、次はその応用です。この章では、バラバラのデータをグループ化して要約したり、複数のテーブルを連結してより豊かな情報を引き出したりする方法を学びます。これらはデータ分析に不可欠なスキルです。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第4章 SQLをさらに便利にする関数群</title>
+      <link>https://example.org/chapter4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter4/</guid>
+      <description>&lt;p&gt;これまでの章で、データの取得、集計、結合といった基本操作を学びました。この章では、それらの操作をさらに強力にする「関数」について学びます。&lt;/p&gt;&#xA;&lt;p&gt;関数とは、特定の値を受け取って、何らかの処理を行い、結果を返す便利な道具です。SQLには、文字列の加工、数値計算、日付の操作など、様々な目的のための関数が組み込まれています。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第5章 中級者へのステップアップ</title>
+      <link>https://example.org/chapter5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter5/</guid>
+      <description>&lt;p&gt;基本的なSQLに慣れてきたら、次にもっと複雑な課題を、よりスマートに解決する方法を学びましょう。この章では、SQLの可読性を高める書き方、高度な分析機能、そしてデータベースをより効率的に使うための概念を紹介します。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第6章 (発展) データベース設計の初歩</title>
+      <link>https://example.org/chapter6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/chapter6/</guid>
+      <description>&lt;p&gt;これまでの章で、SQLを使ってデータを操作する方法を学んできました。しかし、そもそもそのデータが格納されている「テーブル」は、どのように設計されるべきなのでしょうか？&#xA;この章では、データベース設計の根幹をなす「正規化」という考え方と、設計図である「ER図」の読み方について学びます。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

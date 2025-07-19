@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+
+
+<title>4-2. 数値関数 | SQL Master Hub</title>
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<meta property="og:title" content="4-2. 数値関数 | SQL Master Hub">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.org/chapter4/4-2-numeric-functions/">
+<meta property="og:image" content="https://example.org/images/og-image.png">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="4-2. 数値関数 | SQL Master Hub">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://example.org/images/og-image.png">
+
+
+
+<link rel="canonical" href="https://example.org/chapter4/4-2-numeric-functions/">
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "SQL Master Hub",
+    "url": "https:\/\/example.org\/chapter4\/4-2-numeric-functions\/",
+    "description": "",
+    "headline": "4-2. 数値関数",
+    "datePublished": "0001-01-01T00:00:00Z",
+    "dateModified": "0001-01-01T00:00:00Z",
+    "author": {
+        "@type": "Organization",
+        "name": ""
+    }}
+</script></head>
+<body>
+<header class="header">
+    <div class="nav-container"><div class="logo">
+            <a href="/">
+                SQL Master Hub
+            </a>
+        </div><button class="mobile-menu-btn" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul class="nav-links"><li><a href="/" >ホーム</a></li><li><a href="/tags/chapter/" >章一覧</a></li><li><a href="/tags/exercise/" >演習問題</a></li><li><a href="/appendix/" >リファレンス</a></li><li><a href="/about/" >このサイトについて</a></li></ul>
+        </nav>
+    </div>
+</header>
+    <div class="main-content">
+        <aside class="sidebar fade-in">
+<h3>📚 章一覧</h3><ul class="chapter-list"><li class="chapter-item">
+        <a href="https://example.org/chapter0/" class="chapter-link ">第0章 はじめに：データベースの世界へようこそ</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter1/" class="chapter-link ">第1章 データベースとテーブルの基本操作 (DDL)</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter2/" class="chapter-link ">第2章 データを操る基本の「キ」 (DML: CRUD操作)</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter3/" class="chapter-link ">第3章 データ分析の第一歩：集計と結合</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter4/" class="chapter-link ">第4章 SQLをさらに便利にする関数群</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter5/" class="chapter-link ">第5章 中級者へのステップアップ</a></li><li class="chapter-item">
+        <a href="https://example.org/chapter6/" class="chapter-link ">第6章 (発展) データベース設計の初歩</a></li><li class="chapter-item">
+        <a href="https://example.org/appendix/" class="chapter-link ">
+            📎 付録
+        </a>
+    </li></ul>
+
+<div class="sidebar-section">
+    <h3>🔗 クイックリンク</h3>
+    <ul class="quick-links"><li><a href="/appendix/a-5-quickreference/" >SQLリファレンス</a></li><li><a href="/tags/exercise/" >演習問題集</a></li><li><a href="/chapter0/#0-5-%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E7%B4%B9%E4%BB%8B%E3%81%A8%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97" >サンプルデータベース</a></li><li><a href="https://www.sqlite.org/index.html" target="_blank" rel="noopener">SQLite公式ドキュメント</a></li><li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener">MySQL公式ドキュメント</a></li><li><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener">PostgreSQL公式ドキュメント</a></li></ul>
+</div>
+<div class="sidebar-section">
+    <h3>💾 対応RDBMS</h3>
+    <div class="rdbms-support"><div class="badge mysql">MySQL</div><div class="badge postgresql">PostgreSQL</div><div class="badge sqlite">SQLite</div><div class="badge access">MS Access</div><div class="badge db2">IBM Db2</div></div>
+</div></aside>
+        <main class="content fade-in "><article class="article">
+    
+    <header class="article-header">
+        <h1>4-2. 数値関数</h1>
+        
+        
+        <div class="article-meta"></div>
+    </header>
+
+    
+    <div class="article-content">
+        <p>数値データの計算や丸め処理に使用します。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">関数</th>
+          <th style="text-align: left">説明</th>
+          <th style="text-align: left">例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ROUND(num, [digits])</code></td>
+          <td style="text-align: left">四捨五入する。<code>digits</code>は小数点以下の桁数。</td>
+          <td style="text-align: left"><code>ROUND(123.456, 1)</code> -&gt; <code>123.5</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CEIL(num)</code> / <code>CEILING(num)</code></td>
+          <td style="text-align: left">小数点以下を切り上げる。</td>
+          <td style="text-align: left"><code>CEIL(123.456)</code> -&gt; <code>124</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FLOOR(num)</code></td>
+          <td style="text-align: left">小数点以下を切り捨てる。</td>
+          <td style="text-align: left"><code>FLOOR(123.456)</code> -&gt; <code>123</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ABS(num)</code></td>
+          <td style="text-align: left">絶対値を返す。</td>
+          <td style="text-align: left"><code>ABS(-100)</code> -&gt; <code>100</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MOD(num1, num2)</code></td>
+          <td style="text-align: left"><code>num1</code>を<code>num2</code>で割った余りを返す。</td>
+          <td style="text-align: left"><code>MOD(10, 3)</code> -&gt; <code>1</code></td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+
+    
+    <footer class="article-footer">
+        
+        <nav class="article-nav"><a href="https://example.org/chapter4/4-1-string-functions/" class="nav-link prev-link">
+                <div class="nav-direction">                                        
+                    <div>← 前のセクション</div>
+                </div>
+                <div class="nav-title">4-1. 文字列関数</div>
+            </a><a href="https://example.org/chapter4/4-3-date-functions/" class="nav-link next-link">
+                <div class="nav-direction">                                        
+                    <div>次のセクション →</div>
+                </div>
+                <div class="nav-title">4-3. 日付/時刻関数</div>
+            </a></nav>
+
+        </footer>
+</article>
+        </main>
+    </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid with-dividers">
+            
+            <div class="footer-section">
+                <h4>SQL Master Hub</h4>
+                <p>SQL初中級者を対象とした実践的な学習リソースです。基本的な構文から実用的なテクニックまで、体系的にSQLをマスターできます。</p></div>
+
+            
+            <div class="footer-section">
+                <h4>ナビゲーション</h4>
+                <ul class="footer-links"><li><a href="/">ホーム</a></li><li><a href="/tags/chapter/">章一覧</a></li><li><a href="/tags/exercise/">演習</a></li><li><a href="/appendix/">リファレンス</a></li></ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>クイックリンク</h4>
+                <ul class="footer-links"><li><a href="/appendix/a-5-quickreference/">SQLリファレンス</a></li><li><a href="/tags/exercise/">演習問題集</a></li><li><a href="/appendix/a-4-glossary/">用語集</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>ライセンス</h4>
+                <p>このサイトのコンテンツは教育目的で提供されています。</p></div>
+
+            </div>
+
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copyright">
+                    &copy; 2025 SQL Master Hub. 
+                    All rights reserved.
+                </p><p class="hugo-credit">
+                    Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+                </p></div>
+        </div>
+    </div>
+</footer>
+
+<style>
+ 
+.footer {
+    background: var(--neutral-800);
+    color: var(--neutral-200);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-grid.with-dividers .footer-section:not(:last-child) {
+    border-right: 1px solid var(--neutral-700);
+    padding-right: 2rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-section h5 {
+    color: var(--neutral-300);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--neutral-300);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue-light);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--neutral-700);
+    border-radius: 50%;
+    color: var(--neutral-300);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.contact-link {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.newsletter-form {
+    margin-top: 1rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--neutral-600);
+    border-radius: 6px;
+    background: var(--neutral-700);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.newsletter-input::placeholder {
+    color: var(--neutral-400);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.newsletter-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.newsletter-button:hover {
+    background: var(--primary-blue-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--neutral-700);
+    padding-top: 1.5rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+
+.hugo-credit {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+
+.hugo-credit a {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+}
+
+.hugo-credit a:hover {
+    text-decoration: underline;
+}
+
+ 
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .footer-grid.with-dividers .footer-section {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--neutral-700);
+        padding-bottom: 1.5rem;
+    }
+    
+    .footer-grid.with-dividers .footer-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#2563eb',
+                primaryTextColor: '#374151',
+                primaryBorderColor: '#e5e7eb',
+                lineColor: '#6b7280'
+            }
+        });
+    </script>
+
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>
