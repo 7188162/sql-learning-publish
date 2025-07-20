@@ -122,8 +122,7 @@
 
 ### 構文
 
-WITH cte名 AS (
-    -- …</p>
+WITH cte名 AS ( …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -143,7 +142,7 @@ WITH cte名 AS (
                 </header>
 
             
-            <div class="card-content"><p class="card-description"> ウィンドウ関数は、`GROUP BY`のように行を集約せず、 **元の行を残したまま**で集計や順位付けを行える、データ分析の強力な武器です。`OVER()`句と一緒に使います。 - **`PARTITION BY` **: `GROUP BY`のように、どのグループで計算するかを指定します。 - …</p>
+            <div class="card-content"><p class="card-description">ウィンドウ関数は、`GROUP BY`のように行を集約せず、 **元の行を残したまま**で集計や順位付けを行える、データ分析の強力な武器です。`OVER()`句と一緒に使います。- **`PARTITION BY` **: `GROUP BY`のように、どのグループで計算するかを指定します。- …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -168,7 +167,7 @@ WITH cte名 AS (
 
 - **`UNION` / `UNION ALL` **: 2つの結果セットを縦に連結します。
   - `UNION`: 重複する行は1つにまとめられます。
-  - `UNION ALL`: 重複を気にせず、すべて …</p>
+  - `UNION ALL`: 重複を気にせ …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -191,7 +190,7 @@ WITH cte名 AS (
             <div class="card-content"><p class="card-description">
 **トランザクション**とは、「すべて成功するか、すべて失敗するかのどちらか」であるべき一連の処理のまとまりです。例えば、銀行振込は「Aさんの口座から引き落とし」と「Bさんの口座へ入金」の2つの`UPDATE`文で構成されますが、片方だけ成功しては困ります。
 
-- **`COMMIT` **: ト …</p>
+- **`COMMIT` …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -215,7 +214,7 @@ WITH cte名 AS (
 データベースをより効率的、安全に使うための2つの重要なオブジェクトを紹介します。
 
 ### ビュー (`VIEW`)
-ビューは、`SELECT`文に名前を付けて保存した**仮想的なテーブル**です。複雑な結合や集計クエリをビューとして定義しておけば、ユーザーはそのビューに対して単純な`SELECT …</p>
+ビューは、`SELECT`文に名前を付けて保存した**仮想的なテーブル**です。複雑な結合や集計クエリをビューとして定義しておけば、ユーザーはそのビューに対して単純 …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -237,7 +236,7 @@ WITH cte名 AS (
             
             <div class="card-content"><p class="card-description">
 トリガーは、特定のテーブルに対して`INSERT`, `UPDATE`, `DELETE`が行われたことを**きっかけ（トリガー） **として、 **自動的に実行される**処理です。
-例えば、「`employees`テーブルの`salary`が更新されたら、その変更履歴を`audit_logs` …</p>
+例えば、「`employees`テーブルの`salary`が更新されたら、その変更履歴 …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -261,9 +260,7 @@ WITH cte名 AS (
 実務でよく遭遇するデータ形式の変換テクニックを2つ紹介します。
 
 ### 横持ちから縦持ちへの変換
-`quarterly_sales`テーブルのように、各項目が列になっている「横持ち」データを、分析しやすい「縦持ち」データに変換します。`UNION ALL`を使うのが一般的です。
-
-SELECT …</p>
+`quarterly_sales`テーブルのように、各項目が列になっている「横持ち」データを、分析しやすい「縦持ち」データに変換します。`UNION ALL`を使うのが一般的です。 …</p>
                 <div class="card-meta"></div>
 
                 </div>
@@ -287,7 +284,7 @@ SELECT …</p>
 この章で学んだ内容を使い、あなたの理解度を試してみましょう。
 
 1. CTEを使い、「各部署の平均給与」をまず定義し、その結果と`employees`テーブルを結合して、各従業員の給与が自身の所属する部署の平均給与より高いか低いかを表示してください。
-2. ウィンドウ関数を使い、全従業員を給与が高 …</p>
+2. ウィンドウ関数を使い、全従業員を …</p>
                 <div class="card-meta"></div>
 
                 </div>
